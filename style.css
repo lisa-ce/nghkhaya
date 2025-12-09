@@ -1,35 +1,35 @@
-   body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-    }
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
 
-    #container {
-        position: relative;
-        width: 600px;
-    }
+#container {
+    position: relative;
+    width: 820px;
+}
 
-    #floorplan {
-        width: 100%;
-    }
+#floorplan {
+    width: 100%;
+}
 
-    /* Room buttons */
-    .room {
-        position: absolute;
-        padding: 5px 10px;
-        background: white;
-        border: 1px solid #333;
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: 12px;
-    }
+/* Room buttons */
+.room {
+    position: absolute;
+    padding: 5px 10px;
+    background: white;
+    border: 1px solid #333;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+}
 
-    /* Highlighted line */
-    #path {
-        position: absolute;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-    }
+/* Line layer */
+#path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
