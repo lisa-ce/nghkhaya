@@ -5,6 +5,27 @@ const roomPositions = {
     bedroom2: { x: 380, y: 550 },
     bathroom: { x: 620, y: 550 }
 };
+const nodes = {
+  masterDoor: { x: 260, y: 300 },
+  kitchenCenter: { x: 380, y: 300 },
+  diningDoor: { x: 380, y: 390 },
+  bedroom2Door: { x: 330, y: 450 },
+  bathroomDoor: { x: 550, y: 450 }
+};
+const edges = {
+  masterDoor: ["kitchenCenter"],
+  kitchenCenter: ["masterDoor", "diningDoor", "bedroom2Door"],
+  diningDoor: ["kitchenCenter"],
+  bedroom2Door: ["kitchenCenter", "bathroomDoor"],
+  bathroomDoor: ["bedroom2Door"]
+};
+const roomToNode = {
+    master: "masterDoor",
+    kitchen: "kitchenCenter",
+    dining: "diningDoor",
+    bedroom2: "bedroom2Door",
+    bathroom: "bathroomDoor"
+};
 
 function drawPath() {
     const start = document.getElementById("startRoom").value;
