@@ -1,8 +1,9 @@
 const roomPositions = {
-    kitchen: { x: 480, y: 70 },
-    living: { x: 220, y: 170 },
-    bedroom: { x: 90, y: 270 },
-    bathroom: { x: 480, y: 270 }
+    kitchen: { x: 540, y: 200 },
+    dining: { x: 380, y: 360 },
+    master: { x: 150, y: 220 },
+    bedroom2: { x: 380, y: 550 },
+    bathroom: { x: 620, y: 550 }
 };
 
 function drawPath() {
@@ -17,7 +18,7 @@ function drawPath() {
     const s = roomPositions[start];
     const e = roomPositions[end];
 
-    ctx.lineWidth = 4;
+    ctx.lineWidth = 5;
     ctx.strokeStyle = "red";
 
     ctx.beginPath();
