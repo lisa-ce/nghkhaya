@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Navigation</title>
+</head>
+<body>
+  <h2>
+    House Navigation
+  </h2>
+  <p>Select start and end room:</p>
+  <select  id="start-room">
+    <option value="kitchen">Kitchen</option>
+      <option value="living">Living Room</option>
+    <option value="bedroom">Bedroom</option>
+    <option value="bathroom">Bathroom</option>
+  </select>
+  <select id="endRoom">
+    <option value="kitchen">Kitchen</option>
+    <option value="living">Living Room</option>
+    <option value="bedroom">Bedroom</option>
+    <option value="bathroom">Bathroom</option>
+</select>
+
+<button onclick="drawPath()">Show Route</button>
+<br><br>
+<div id="container">
+    <img id="floorplan" src="floorplan.png">
+
+    <!-- Canvas for drawing the path -->
+    <canvas id="path" width="600" height="400"></canvas>
+
+    <!-- Buttons placed on the floor plan (adjust positions as needed) -->
+    <div class="room" id="kitchen" style="left: 450px; top: 50px;">Kitchen</div>
+    <div class="room" id="living" style="left: 200px; top: 150px;">Living</div>
+    <div class="room" id="bedroom" style="left: 60px; top: 250px;">Bedroom</div>
+    <div class="room" id="bathroom" style="left: 450px; top: 250px;">Bathroom</div>
+</div>
+</body>
+</html>
