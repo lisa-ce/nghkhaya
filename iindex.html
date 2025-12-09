@@ -7,36 +7,44 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>
-    House Navigation
-  </h2>
+  <h2>House Navigation</h2>
+
   <p>Select start and end room:</p>
-  <select  id="start-room">
+
+  <select id="startRoom">
     <option value="kitchen">Kitchen</option>
-      <option value="living">Living Room</option>
-    <option value="bedroom">Bedroom</option>
+    <option value="dining">Dining</option>
+    <option value="master">Master Bedroom</option>
+    <option value="bedroom2">Bedroom 2</option>
     <option value="bathroom">Bathroom</option>
   </select>
+
   <select id="endRoom">
     <option value="kitchen">Kitchen</option>
-    <option value="living">Living Room</option>
-    <option value="bedroom">Bedroom</option>
+    <option value="dining">Dining</option>
+    <option value="master">Master Bedroom</option>
+    <option value="bedroom2">Bedroom 2</option>
     <option value="bathroom">Bathroom</option>
-</select>
+  </select>
 
-<button onclick="drawPath()">Show Route</button>
-<br><br>
-<div id="container">
-    <img id="floorplan" src="okay_here_is_the_house__lets_s_2025-12-09T15-08-07.png">
+  <button onclick="drawPath()">Show Route</button>
 
-    <!-- Canvas for drawing the path -->
-    <canvas id="path" width="600" height="400"></canvas>
+  <br><br>
 
-    <!-- Buttons placed on the floor plan (adjust positions as needed) -->
-    <div class="room" id="kitchen" style="left: 450px; top: 50px;">Kitchen</div>
-    <div class="room" id="living" style="left: 200px; top: 150px;">Living</div>
-    <div class="room" id="bedroom" style="left: 60px; top: 250px;">Bedroom</div>
-    <div class="room" id="bathroom" style="left: 450px; top: 250px;">Bathroom</div>
-</div>
+  <div id="container">
+      <img id="floorplan" src="okay_here_is_the_house__lets_s_2025-12-09T15-08-07.png">
+
+      <!-- Canvas for drawing path -->
+      <canvas id="path" width="820" height="820"></canvas>
+
+      <!-- Room buttons placed according to your image -->
+      <div class="room" id="kitchen" style="left: 510px; top: 180px;">Kitchen</div>
+      <div class="room" id="dining" style="left: 350px; top: 330px;">Dining</div>
+      <div class="room" id="master" style="left: 120px; top: 200px;">Master Room</div>
+      <div class="room" id="bedroom2" style="left: 350px; top: 520px;">Bedroom 2</div>
+      <div class="room" id="bathroom" style="left: 590px; top: 520px;">Bathroom</div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
