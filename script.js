@@ -26,24 +26,64 @@ const roomToNode = {
     bedroom2: "bedroom2Door",
     bathroom: "bathroomDoor"
 };
+function findPath(start, end) {
+    let queue = [start];
+    let visited = {};
+    visited[start] = null;
+
+    while (queue.length > 0) {
+        let current = queue.shift();
+
+        if (current === end) break;
+
+        for (let neighbor of edges[current]) {
+            if (!visited.hasOwnProperty(neighbor)) {
+                visited[neighbor] = current;
+                queue.push(neighbor);
+            }
+        }
+    }
+
+    // Reconstruct path
+    let path = [];
+    let step = end;
+
+    while (step !== null) {
+        path.unshift(step);
+        step = visited[step];
+    }
+
+    return path;
+}
 
 function drawPath() {
-    const start = document.getElementById("startRoom").value;
-    const end = document.getElementById("endRoom").value;
+    const startRoom = document.getElementById("startRoom").value;
+    const endRoom = document.getElementById("endRoom").value;
+
+    const startNode = roomToNode[startRoom];
+    const endNode = roomToNode[endRoom];
+
+    const pathNodes = findPath(startNode, endNode);
 
     const canvas = document.getElementById("path");
     const ctx = canvas.getContext("2d");
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    const s = roomPositions[start];
-    const e = roomPositions[end];
-
     ctx.lineWidth = 5;
     ctx.strokeStyle = "red";
 
     ctx.beginPath();
-    ctx.moveTo(s.x, s.y);
-    ctx.lineTo(e.x, e.y);
+
+    // Move to first node
+    let first = nodes[pathNodes[0]];
+    ctx.moveTo(first.x, first.y);
+
+    // Draw along each step
+    for (let i = 1; i < pathNodes.length; i++) {
+        let p = nodes[pathNodes[i]];
+        ctx.lineTo(p.x, p.y);
+    }
+
     ctx.stroke();
 }
+
